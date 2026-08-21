@@ -1,11 +1,89 @@
 <!DOCTYPE html>
 <html lang="th">
-<head><meta charset="utf-8"><title>เกี่ยวกับเรา - ReviewKhum Official</title></head>
-<body style="font-family:system-ui;max-width:680px;margin:40px auto;padding:0 20px;line-height:1.7">
-<h1>เกี่ยวกับ ReviewKhum Official</h1>
-<p>รีวิวสินค้าคุ้มค่า ตรงไปตรงมา ช่วยคุณตัดสินใจก่อนซื้อ</p>
-<p>เว็บไซต์นี้ใช้ AI Agent ช่วยค้นคว้าและร่างบทความรีวิวสินค้า เพื่อเป็นข้อมูลประกอบการตัดสินใจก่อนซื้อ
-บทความทุกชิ้นผ่านการตรวจสอบก่อนเผยแพร่</p>
-<p>บางลิงก์ในเว็บเป็น affiliate link หากคุณซื้อสินค้าผ่านลิงก์นี้ เราอาจได้รับค่าคอมมิชชั่น โดยที่ราคาสินค้าไม่เปลี่ยนแปลง</p>
-<p><a href="index.html">&larr; กลับหน้าแรก</a></p>
-</body></html>
+<head><meta charset="utf-8"><title>เกี่ยวกับเรา - ReviewKhum Official</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0c10; --bg2:#111319; --card:#15171f; --card2:#1b1e29;
+  --fg:#ececf1; --muted:#9aa0ad; --line:#262a36;
+  --accent:#ffb547; --accent2:#ff8a3d; --glow:rgba(255,181,71,.35);
+  --radius:18px; --maxw:1080px;
+  --font:'Inter',system-ui,-apple-system,'Segoe UI',Tahoma,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:
+  radial-gradient(1200px 600px at 80% -10%, rgba(255,138,61,.10), transparent 60%),
+  radial-gradient(900px 500px at 0% 0%, rgba(255,181,71,.08), transparent 55%),
+  var(--bg);
+  color:var(--fg);font-family:var(--font);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+/* Header */
+.site-head{position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);
+  background:rgba(11,12,16,.72);border-bottom:1px solid var(--line)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px;font-size:1.05rem}
+.logo .dot{width:11px;height:11px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 0 14px var(--glow)}
+.logo b{background:linear-gradient(120deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav{display:flex;gap:22px}
+.nav a{color:var(--muted);font-size:.94rem;transition:color .2s}
+.nav a:hover{color:var(--fg)}
+
+/* Hero */
+.hero{padding:84px 0 56px;text-align:center}
+.hero .eyebrow{display:inline-block;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);border:1px solid var(--line);padding:6px 14px;border-radius:999px;margin-bottom:22px;background:rgba(255,181,71,.06)}
+.hero h1{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.1;margin:0 0 16px;font-weight:800;letter-spacing:-.02em}
+.hero h1 .grad{background:linear-gradient(120deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:1.08rem;max-width:620px;margin:0 auto 28px}
+.hero .cta{display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-block;padding:12px 22px;border-radius:12px;font-weight:700;font-size:.95rem;transition:transform .15s,box-shadow .25s}
+.btn.primary{background:linear-gradient(120deg,var(--accent),var(--accent2));color:#1a1206;box-shadow:0 8px 30px var(--glow)}
+.btn.primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px var(--glow)}
+.btn.ghost{border:1px solid var(--line);color:var(--fg)}
+.btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Section heading */
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;margin:46px 0 22px;gap:16px;flex-wrap:wrap}
+.sec-head h2{font-size:1.6rem;margin:0;font-weight:800;letter-spacing:-.01em}
+.sec-head h2 .bar{display:inline-block;width:8px;height:22px;border-radius:4px;background:linear-gradient(var(--accent),var(--accent2));margin-right:10px;vertical-align:-3px}
+.sec-head .hint{color:var(--muted);font-size:.9rem}
+
+/* Article grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:20px}
+.card{position:relative;background:linear-gradient(180deg,var(--card),var(--card2));
+  border:1px solid var(--line);border-radius:var(--radius);padding:22px;overflow:hidden;
+  transition:transform .25s,border-color .25s,box-shadow .25s}
+.card::before{content:"";position:absolute;inset:0;border-radius:var(--radius);padding:1px;
+  background:linear-gradient(135deg,var(--accent),transparent 40%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .25s}
+.card:hover{transform:translateY(-4px);border-color:transparent;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.card:hover::before{opacity:1}
+.card h3{margin:0 0 8px;font-size:1.12rem;line-height:1.35;font-weight:700}
+.card .meta{color:var(--muted);font-size:.8rem;margin:2px 0 10px}
+.card .ex{color:var(--muted);font-size:.92rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card .tag{position:absolute;top:16px;right:16px;font-size:.65rem;font-weight:700;color:#1a1206;
+  background:linear-gradient(120deg,var(--accent),var(--accent2));padding:3px 9px;border-radius:999px}
+.card .more{display:inline-block;margin-top:14px;color:var(--accent);font-weight:700;font-size:.9rem}
+
+/* Footer */
+.site-foot{border-top:1px solid var(--line);margin-top:64px;padding:34px 0;color:var(--muted);font-size:.88rem}
+.site-foot .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.disclaimer{font-size:.78rem;opacity:.7;max-width:680px}
+@media(max-width:640px){.nav{display:none}.hero{padding:56px 0 40px}}
+</style></head>
+<body>
+<header class="site-head"><div class="wrap">
+  <div class="logo"><span class="dot"></span> <span><b>Review</b>Khum</span> <span style="color:var(--muted);font-weight:500">Official</span></div>
+  <nav class="nav"><a href="index.html">หน้าแรก</a><a href="about.html">เกี่ยวกับเรา</a></nav>
+</div></header>
+<section class="hero wrap"><span class="eyebrow">About</span>
+  <h1>เกี่ยวกับ <span class="grad">ReviewKhum</span></h1>
+  <p>รีวิวสินค้าคุ้มค่า ตรงไปตรงมา ช่วยคุณตัดสินใจก่อนซื้อ</p></section>
+<main class="wrap" style="padding-bottom:60px;max-width:720px">
+  <p style="color:var(--muted)">เว็บไซต์นี้ใช้ AI Agent ช่วยค้นคว้าและร่างบทความรีวิวสินค้า เพื่อเป็นข้อมูลประกอบการตัดสินใจก่อนซื้อ บทความทุกชิ้นผ่านการตรวจสอบก่อนเผยแพร่</p>
+  <p style="color:var(--muted)">บางลิงก์ในเว็บเป็น affiliate link หากคุณซื้อสินค้าผ่านลิงก์นี้ เราอาจได้รับค่าคอมมิชชั่น โดยที่ราคาสินค้าไม่เปลี่ยนแปลง</p>
+  <a class="btn primary" href="index.html">&larr; กลับหน้าแรก</a>
+</main></body></html>
